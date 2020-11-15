@@ -56,8 +56,24 @@ public class HomeFragment extends Fragment {
     }
     public ArrayList<ActiveEvent> createData(){
         ArrayList<ActiveEvent> list = new ArrayList<ActiveEvent>();
-        ActiveEvent event1 = new ActiveEvent("title","bthome");
+        ActiveEvent event1 = new ActiveEvent("xin chào chào","li1");
+        ActiveEvent event2 = new ActiveEvent("xin chào xin chào","li2");
+        ActiveEvent event3 = new ActiveEvent("xin chào xin chào","li3");
+        ActiveEvent event4 = new ActiveEvent("xin chào xin chào","li4");
+        ActiveEvent event5 = new ActiveEvent("xin chào chào","li1");
+        ActiveEvent event6 = new ActiveEvent("xin chào xin chào","li2");
+        ActiveEvent event7 = new ActiveEvent("xin chào xin chào","li3");
+        ActiveEvent event8 = new ActiveEvent("xin chào xin chào","li4");
+
         list.add(event1);
+        list.add(event2);
+        list.add(event3);
+        list.add(event4);
+        list.add(event5);
+        list.add(event6);
+        list.add(event7);
+        list.add(event8);
+
         return list;
     }
 

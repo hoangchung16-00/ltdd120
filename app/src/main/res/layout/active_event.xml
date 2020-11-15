@@ -6,31 +6,32 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="298dp"
-        android:layout_height="281dp"
-        android:layout_margin="10dp"
+        android:layout_width="195dp"
+        android:layout_height="258dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <ImageView
             android:id="@+id/imageEvent"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="10dp"
+            android:layout_width="192dp"
+            android:layout_height="182dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:contentDescription="@string/app_name"
             android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/titleEvent"
-            android:layout_width="match_parent"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_margin="10dp"
-            android:layout_marginTop="@dimen/elementMargin"
-            android:layout_marginBottom="44dp"
-            android:background="@color/overlay"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:padding="@dimen/cellText_padding"
-            android:textColor="@color/textColor"
+            android:textColor="@color/black"
             android:textSize="@dimen/cellText_textSize" />
 
     </RelativeLayout>

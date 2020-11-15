@@ -14,23 +14,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewpaper_home"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                tools:layout_editor_absoluteX="8dp"
-                android:layout_weight="1">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpaper_home"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            tools:layout_editor_absoluteX="8dp"
+            android:layout_weight="1">
 
-            </androidx.viewpager.widget.ViewPager>
+        </androidx.viewpager.widget.ViewPager>
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tablayout_home"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/AppTabLayout"
-                app:tabTextAppearance="@style/AppTabTextAppearance">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/AppTabLayout"
+            app:tabTextAppearance="@style/AppTabTextAppearance">
 
-            </com.google.android.material.tabs.TabLayout>
+        </com.google.android.material.tabs.TabLayout>
 
 
 

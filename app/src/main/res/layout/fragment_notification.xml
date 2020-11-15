@@ -13,25 +13,34 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/bg_color"
+            android:background="@color/main"
             android:id="@+id/li_noti_11"
             android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="48dp"
+                android:text="Thông báo"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_segoe_bold"
+                />
 
         </LinearLayout>
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <LinearLayout
+
+
+
+            <ListView
+                android:id="@+id/lv_noti"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:id="@+id/li_noti_12">
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/lv_noti"/>
-            </LinearLayout>
-        </ScrollView>
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

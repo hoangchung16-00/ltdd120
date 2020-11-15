@@ -28,10 +28,17 @@ public class HomeAcitivity extends AppCompatActivity {
         viewPager=(ViewPager) findViewById(R.id.viewpaper_home);
 
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
-        tabLayout.addTab(tabLayout.newTab().setText("Payment"));
-        tabLayout.addTab(tabLayout.newTab().setText("Account"));
-        tabLayout.addTab(tabLayout.newTab().setText("Notification"));
         tabLayout.addTab(tabLayout.newTab().setText("Acitivity"));
+        tabLayout.addTab(tabLayout.newTab().setText("Payment"));
+
+        tabLayout.addTab(tabLayout.newTab().setText("Notification"));
+
+        tabLayout.addTab(tabLayout.newTab().setText("Account"));
+        tabLayout.getTabAt(0).setIcon(R.drawable.bthome);
+        tabLayout.getTabAt(1).setIcon(R.drawable.document2);
+        tabLayout.getTabAt(2).setIcon(R.drawable.credit);
+        tabLayout.getTabAt(3).setIcon(R.drawable.message1);
+        tabLayout.getTabAt(4).setIcon(R.drawable.document);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final TabAdapter adapter = new TabAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());

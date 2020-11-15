@@ -30,16 +30,16 @@ public class TabAdapter extends FragmentPagerAdapter {
             case 0:
                 HomeFragment homeFragment = new HomeFragment();
                 return homeFragment;
-            case 1:
+            case 2:
                 PaymentFragment paymentFragment  = new PaymentFragment();
                 return paymentFragment;
             case 3:
                 NotificationFragment notificationFragment = new NotificationFragment();
                 return notificationFragment;
-            case 2:
+            case 4:
                 AccountFragment accountFragment = new AccountFragment();
                 return accountFragment;
-            case 4:
+            case 1:
                 ActitivityFragment actitivityFragment = new ActitivityFragment();
                 return actitivityFragment;
             default:

@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="#EEFBFA"
         tools:layout_editor_absoluteX="-138dp"
         tools:layout_editor_absoluteY="136dp">
 
@@ -17,98 +18,116 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:id="@+id/cv_edit_account_11">
+
             <LinearLayout
+                android:id="@+id/li_edit_account_113"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:orientation="horizontal"
-                android:id="@+id/li_edit_account_111"
-                android:background="@color/cardview_dark_background">
+                android:layout_height="match_parent"
+                android:layout_marginTop="121dp"
+                android:background="#EEFBFA"
+                android:orientation="vertical">
+
                 <LinearLayout
+                    android:id="@+id/li_edit_account_1131"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:orientation="horizontal"
-                    android:id="@+id/li_edit_account_1111"
-                    android:layout_marginTop="10dp">
-                    <LinearLayout
+                    android:layout_marginTop="52dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_edit_account_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Username"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="25dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/li_edit_account_1132"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="13dp"
+                        android:text="0 point"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="143dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="13dp"
+                        android:text="Ưu đãi cho thành viên"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/li_edit_account_111"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/banner2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/li_edit_account_1111"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
                         android:id="@+id/li_edit_account_11111"
-                        android:orientation="horizontal"
-                        android:layout_marginLeft="10dp">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal">
+
                         <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/bthome"/>
+                            android:id="@+id/backtoprofile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/backdraw" />
 
                     </LinearLayout>
+
                     <LinearLayout
+                        android:id="@+id/li_edit_account_1112"
                         android:layout_width="45dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="285dp"
-                        android:id="@+id/li_edit_account_1112"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="Sửa"
-                            android:textSize="23dp"
-                            android:textAlignment="center"/>
+                            android:textAlignment="center"
+                            android:textSize="23dp" />
                     </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="68dp"
-                android:src="@drawable/bthome"
-                android:layout_marginLeft="150dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/li_edit_account_113"
-                android:orientation="vertical"
-                android:layout_marginTop="121dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:id="@+id/li_edit_account_1131"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="52dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Username"
-                        android:textSize="25dp"
-                        android:textAlignment="center"
-                        android:id="@+id/tv_edit_account_username"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/li_edit_account_1132"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:text="0 point"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginLeft="100dp"
-                        android:layout_marginBottom="13dp"/>
-                    <TextView
-                        android:layout_width="143dp"
-                        android:layout_height="match_parent"
-                        android:text="Ưu đãi cho thành viên"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="13dp"/>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
+                android:src="@drawable/download" />
 
         </androidx.cardview.widget.CardView>
         <ScrollView
@@ -126,26 +145,21 @@
                     android:orientation="vertical">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="260dp"
+                        android:layout_height="wrap_content"
+                        android:background="#E6DDFA"
                         android:id="@+id/li_edit_account_1211"
                         android:orientation="vertical"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginRight="35dp">
-                        <LinearLayout
+                        android:layout_marginTop="7dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp">
+                        <EditText
                             android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:id="@+id/li_edit_account_12111"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:text="Tên"
-                                android:textSize="20dp"
-                                android:layout_marginTop="5dp"/>
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"/>
-                        </LinearLayout>
+                            android:layout_height="35dp"
+                            android:background="@color/textColor"
+                            android:padding="5dp"
+                            android:hint="Họ và Tên"
+                            android:textSize="17dp"
+                            />
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="80dp"
@@ -154,9 +168,10 @@
                             android:layout_marginTop="10dp">
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="30dp"
+                                android:layout_height="wrap_content"
                                 android:text="Số điên thoại"
-                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                android:textSize="15dp"
                                 android:layout_marginTop="5dp"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -173,35 +188,39 @@
                                     android:layout_marginLeft="5dp"
                                     android:layout_marginRight="5dp">
                                     <ImageView
-                                        android:layout_width="35dp"
+                                        android:layout_width="40dp"
                                         android:layout_height="match_parent"
-                                        android:src="@drawable/bthome"
+                                        android:src="@drawable/vnflat"
                                         android:id="@+id/iv_flag_country_account"/>
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="+844"
+                                        android:text="+84"
                                         android:textAlignment="center"
                                         android:gravity="center"
                                         android:id="@+id/tv_code_country_account"/>
                                 </LinearLayout>
                                 <EditText
                                     android:layout_width="match_parent"
+                                    android:background="@color/textColor"
+                                    android:textSize="17dp"
                                     android:layout_height="match_parent"/>
                             </LinearLayout>
 
                         </LinearLayout>
-                        <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/li_edit_account_12113"
+                        android:layout_marginTop="20dp">
+                        <EditText
                             android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:orientation="vertical"
-                            android:id="@+id/li_edit_account_12113"
-                            android:layout_marginTop="20dp">
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"/>
-
-                        </LinearLayout>
+                            android:layout_height="35dp"
+                            android:background="@color/textColor"
+                            android:hint="Email"
+                            android:layout_marginTop="7dp"
+                            android:textSize="17dp"
+                            />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -256,6 +275,7 @@
                         android:layout_height="40dp"
                         android:layout_marginLeft="20dp"
                         android:text="Đã liên kết tài khoản"
+                        android:textStyle="bold"
                         android:textSize="24dp"/>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -265,7 +285,7 @@
                         <ImageView
                             android:layout_width="34dp"
                             android:layout_height="34dp"
-                            android:src="@drawable/bthome"
+                            android:src="@drawable/facebooklogo"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="13dp"/>
                         <TextView
@@ -281,6 +301,7 @@
                             android:layout_height="30dp"
                             android:layout_marginTop="15dp"
                             android:layout_marginLeft="200dp"
+                            android:checked="true"
                             android:id="@+id/sw_facebook_account"/>
 
                     </LinearLayout>
@@ -292,17 +313,18 @@
                         <ImageView
                             android:layout_width="34dp"
                             android:layout_height="34dp"
-                            android:src="@drawable/bthome"
+                            android:src="@drawable/googlelogo"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="13dp"/>
+
                         <TextView
-                            android:layout_width="66dp"
+                            android:layout_width="80dp"
                             android:layout_height="22dp"
+                            android:layout_marginLeft="15dp"
                             android:layout_marginTop="19dp"
                             android:text="Google"
-                            android:layout_marginLeft="15dp"
                             android:textAlignment="center"
-                            android:textSize="18dp"/>
+                            android:textSize="18dp" />
                         <Switch
                             android:layout_width="50dp"
                             android:layout_height="30dp"
@@ -313,34 +335,24 @@
                     </LinearLayout>
 
                 </LinearLayout>
-                <LinearLayout
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/li_edit_account_124"
-                    android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/li_edit_account_1241"
-                        android:orientation="vertical"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:textSize="28dp"
-                            android:textAlignment="center"
-                            android:text="Đăng xuất"/>
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="version 1.0"/>
+                    android:gravity="center"
+                    android:id="@+id/logoutText"
+                    android:textSize="28dp"
+                    android:textColor="#FF0000"
+                    android:textAlignment="center"
+                    android:text="Đăng xuất"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="version 1.0"
+                    android:layout_gravity="right"/>
 
 
-                </LinearLayout>
+
 
             </LinearLayout>
 
