@@ -33,7 +33,7 @@ public class EditAccount extends AppCompatActivity {
 
 
 
-        LinearLayout logout =(LinearLayout) findViewById(R.id.li_edit_account_124);
+        LinearLayout logout =(LinearLayout) findViewById(R.id.li_editacount_logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
