@@ -39,13 +39,13 @@ public class LoginActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_login);
+        databaseHelper = new DatabaseHelper();
+        databaseHelper.fetchdata();
 
 
         initViews();
-        databaseHelper = new DatabaseHelper(activity);
-        if(!databaseHelper.checkAccountName("admin")) {
-            createAdmin();
-        }
+
+
     }
     /**
      * This method is to initialize views
@@ -60,8 +60,8 @@ public class LoginActivity extends AppCompatActivity {
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(verifyFromSQLite()){
-                    Account.AccountLogin = getAccountLogin(etUsername.getText().toString());
+                if(databaseHelper.checkAccount(etUsername.getText().toString().trim(),etPassword.getText().toString().trim())){
+                    databaseHelper.getLoginAccount(etUsername.getText().toString().trim());
                     Intent intent = new Intent(LoginActivity.this, HomeAcitivity.class);
                     intent.putExtra("login","Login");
                     startActivity(intent);
@@ -88,37 +88,5 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * This method is to validate the input text fields and verify login credentials from SQLite
      */
-    private boolean verifyFromSQLite() {
-        if (databaseHelper.checkAccount(etUsername.getText().toString().trim()
-                , etPassword.getText().toString().trim())) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    private void emptyInputEditText() {
-        etUsername.setText(null);
-        etPassword.setText(null);
-    }
-    public void createAdmin(){
-        Account account = new Account();
-        account.setUserName("admin");
-        account.setPassWord("123");
-        account.setName("chung");
-        account.setGioiTinh(1);
-        account.setEmail("hoangchung1687@gmail.com");
-        account.setPhoneNumber("0333539973");
-        databaseHelper.addAccount(account);
-    }
-    public Account getAccountLogin(String username){
-        List<Account> accountArrayList = new ArrayList<>();
-        accountArrayList = databaseHelper.getAllAccount();
-        for(int i=0;i<accountArrayList.size();i++) {
-            if(username.trim().equals(accountArrayList.get(i).getUserName())){
-                return accountArrayList.get(i);
-            }
-        }
-        return null;
-    }
 
 }

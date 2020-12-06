@@ -5,6 +5,16 @@ public class Account {
     private int gioiTinh;
     public static Account AccountLogin;
 
+
+    public Account(String userName, String passWord, String name, String phoneNumber, String email, int gioiTinh) {
+        this.userName = userName;
+        this.passWord = passWord;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.gioiTinh = gioiTinh;
+    }
+
     public Account() {
     }
     public Account(String passWord){

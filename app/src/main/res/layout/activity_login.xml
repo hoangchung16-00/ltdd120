@@ -17,7 +17,7 @@
         <LinearLayout
             android:id="@+id/li_login_11"
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="200dp"
             android:orientation="vertical">
 
 
@@ -95,8 +95,8 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColorHint="@color/bg_color">
+                    android:textColorHint="@color/bg_color"
+                    android:layout_height="match_parent">
 
                     <EditText
                         android:id="@+id/et_login_password"
@@ -114,7 +114,7 @@
             <LinearLayout
                 android:id="@+id/li_login_123"
                 android:layout_width="match_parent"
-                android:layout_height="395dp"
+                android:layout_height="320dp"
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
@@ -167,7 +167,6 @@
 
 
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

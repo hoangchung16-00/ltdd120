@@ -27,9 +27,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/li_memberrank_home">
-                <ImageView
+                <Button
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:id="@+id/imghome"
                     android:src="@drawable/bthome"
                     android:layout_marginTop="14dp"
                     android:layout_marginLeft="14dp"/>
@@ -68,7 +69,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/main"
+                        android:background="#23B50A"
                         android:orientation="vertical">
 
                         <TextView

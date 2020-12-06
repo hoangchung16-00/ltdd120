@@ -63,15 +63,13 @@
             android:layout_height="392dp"
             android:id="@+id/li_standard_13"
             android:orientation="vertical">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_margin="10dp"
                 android:text="Tuân theo những tiêu chuẩn về vệ sinh và sức khỏe trên chuyến đi"
-                android:textColor="@color/black"
                 android:textSize="28dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
@@ -123,22 +121,20 @@
 
 
         </LinearLayout>
-
         <LinearLayout
-            android:id="@+id/li_standard_14"
             android:layout_width="match_parent"
-            android:layout_height="88dp"
+            android:layout_height="match_parent"
+            android:id="@+id/li_standard_14"
             android:orientation="vertical">
-
             <Button
                 android:id="@+id/bt_standard_agree"
                 android:layout_width="320dp"
                 android:layout_height="70dp"
-                android:layout_marginLeft="40dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginLeft="40dp"
                 android:background="@android:color/holo_green_light"
                 android:text="Tôi đồng ý"
-                android:textSize="20dp" />
+                android:textSize="20dp"/>
         </LinearLayout>
 
     </LinearLayout>

@@ -3,7 +3,7 @@ package com.example.appcaronline1.memberrank;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,12 +16,12 @@ public class MemberRank extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_rank);
-       LinearLayout home = (LinearLayout) findViewById(R.id.li_memberrank_home);
+        Button home = (Button) findViewById(R.id.imghome);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MemberRank.this, HomeAcitivity.class);
-                intent.putExtra("meber","home");
+                intent.putExtra("member","home");
                 startActivity(intent);
             }
         });
