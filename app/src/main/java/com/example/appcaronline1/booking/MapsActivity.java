@@ -1,15 +1,20 @@
-package com.example.appcaronline1.map;
+package com.example.appcaronline1.booking;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
@@ -17,6 +22,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.appcaronline1.R;
+import com.example.appcaronline1.home.HomeAcitivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -39,6 +45,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
+    TextView tvdirect;
+    ImageView btback;
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
@@ -52,6 +60,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
         }
+        tvdirect = (TextView) findViewById(R.id.tv_direct);
+        tvdirect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MapsActivity.this, DirectionActivity.class);
+                startActivity(intent);
+            }
+        });
+        btback = (ImageView) findViewById(R.id.back_home);
+        btback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent(MapsActivity.this, HomeAcitivity.class);
+                startActivity(intent);
+            }
+        });
         SupportMapFragment mapFragment = (SupportMapFragment)
                 getSupportFragmentManager()
                         .findFragmentById(R.id.map);

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".booking.MapsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/back_booking_activity"
+                        android:src="@drawable/btback"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="130dp"
+                        android:text="Ride"
+                        android:textAlignment="center"
+                        android:textSize="27dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp">
+
+                    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:context=".map.MapsActivity" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/cardview_shadow_end_color">
+
+                        <TextView
+                            android:layout_width="287dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="From:"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:layout_width="287dp"
+                            android:layout_height="wrap_content"
+                            android:text="48 cao thang"
+                            android:id="@+id/status_from"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="287dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="To:"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:layout_width="287dp"
+                            android:layout_height="wrap_content"
+                            android:text="92A le duan"
+                            android:id="@+id/status_to"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Vehicle kind:"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:layout_width="230dp"
+                            android:layout_height="wrap_content"
+                            android:text="Bike"
+                            android:id="@+id/status_kind"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="287dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Price:"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:layout_width="287dp"
+                            android:layout_height="wrap_content"
+                            android:text="33333.0"
+                            android:id="@+id/status_price"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

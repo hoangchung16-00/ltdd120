@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appcaronline1.R;
 import com.example.appcaronline1.home.HomeAcitivity;
-import com.example.appcaronline1.map.MapsActivity;
+import com.example.appcaronline1.booking.MapsActivity;
 
 public class Standard extends AppCompatActivity {
 

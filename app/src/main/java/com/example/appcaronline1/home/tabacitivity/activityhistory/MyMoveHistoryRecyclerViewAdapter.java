@@ -14,9 +14,9 @@ import java.util.List;
 
 public class MyMoveHistoryRecyclerViewAdapter extends RecyclerView.Adapter<MyMoveHistoryRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Move> moveList;
+    private final List<Movement> moveList;
 
-    public MyMoveHistoryRecyclerViewAdapter(List<Move> items) {
+    public MyMoveHistoryRecyclerViewAdapter(List<Movement> items) {
         moveList = items;
     }
 
@@ -47,7 +47,7 @@ public class MyMoveHistoryRecyclerViewAdapter extends RecyclerView.Adapter<MyMov
         public final TextView moveTo;
         public final TextView timeStart;
         public final TextView timeEnd;
-        public Move move;
+        public Movement move;
 
         public ViewHolder(View view) {
             super(view);

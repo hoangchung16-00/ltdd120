@@ -4,75 +4,175 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".notificationdetail.NotificationDetail">
+    tools:context=".editaccount.EditAccount">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/li_noti_detail_1">
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="731dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="wrap_content"
+            android:background="#EEFBFA"
             android:orientation="vertical"
-            android:background="@color/main"
-            android:id="@+id/li_noti_detail_11">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/li_noti_detail_111"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp">
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/bthome"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            </LinearLayout>
-        </LinearLayout>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="25dp"
-            android:layout_marginLeft="25dp">
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:id="@+id/li_noti_detail_12">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Title"
-                    android:textSize="50dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Time"
-                    android:textSize="20dp"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:src="@drawable/bthome"/>
+                android:layout_height="250dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:id="@+id/li_noti_detail_121"
-                    android:layout_marginTop="30dp">
-                    <TextView
+                    android:layout_marginTop="121dp"
+                    android:background="#EEFBFA"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/li_edit_account_1131"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="40dp"
+                        android:layout_marginTop="52dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_edit_account_username"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Offer from Grab"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="25dp" />
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:src="@drawable/bthome"/>
-            </LinearLayout>
-        </ScrollView>
 
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@color/design_default_color_secondary"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/backtoprofile"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/btback" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="68dp"
+                    android:src="@drawable/grap" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#EEFBFA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Khi cần grab có"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dec 04 2000"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="225dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/grap_1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="124dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Grap luôn mong được đồng hành cùng bạn"
+                        android:textColor="@color/design_default_color_secondary"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="57dp"
+                        android:text="Grap luôn mong được đồng hành cùng bạn Grap luôn mong được đồng hành cùng bạn Grap luôn mong được đồng hành cùng bạn"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/order_grab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@color/design_default_color_secondary"
+                        android:gravity="center"
+                        android:text="CaOn Bike NGAY"
+                        android:textColor="@color/textColor"
+                        android:textSize="18sp"
+                        tools:visibility="visible" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

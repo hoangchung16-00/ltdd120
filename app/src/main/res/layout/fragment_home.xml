@@ -382,7 +382,6 @@
                         android:gravity="center"
                         android:numColumns="2"
                         android:scrollbars="vertical"/>
-
                 </LinearLayout>
 
 

@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +16,9 @@ import androidx.core.widget.NestedScrollView;
 
 import com.example.appcaronline1.R;
 import com.example.appcaronline1.database.account.Account;
+import com.example.appcaronline1.database.account.AreaCode;
 import com.example.appcaronline1.database.account.DatabaseHelper;
+import com.example.appcaronline1.editaccount.SpinnerAdapter;
 import com.example.appcaronline1.login.LoginActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -27,10 +31,13 @@ public class SignupActivity extends AppCompatActivity {
     private TextInputEditText textInputEditTextConfirm;
     private TextInputEditText textInputEditTextEmail;
     private TextInputEditText textInputEditTextPhoneNumber;
+    private Spinner spinner;
 
     private Button btConfirm,btCancel;
     private DatabaseHelper databaseHelper;
     private RadioGroup rgGioiTinh;
+    private SpinnerAdapter adapter;
+    private AreaCode areaCode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +48,7 @@ public class SignupActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_signup);
         databaseHelper = new DatabaseHelper();
+
         initViews();
     }
     private void initViews() {
@@ -50,6 +58,28 @@ public class SignupActivity extends AppCompatActivity {
         textInputEditTextConfirm = (TextInputEditText) findViewById(R.id.et_signup_password_confirm);
         textInputEditTextEmail = (TextInputEditText) findViewById(R.id.et_signup_email);
         textInputEditTextPhoneNumber = (TextInputEditText) findViewById(R.id.et_signup_phonenumber);
+
+        spinner = (Spinner) findViewById(R.id.spinner_signup);
+        adapter = new SpinnerAdapter(this, DatabaseHelper.areaCodeArrayList);
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent,
+                                               View view, int position, long id)
+                    {
+
+                        // It returns the clicked item.
+                        areaCode = (AreaCode)
+                                parent.getItemAtPosition(position);
+
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent)
+                    {
+                    }
+                });
         rgGioiTinh = (RadioGroup) findViewById(R.id.rg_signup_gioitinh);
         btConfirm = (Button) findViewById(R.id.bt_signup_confirm);
         btConfirm.setOnClickListener(new View.OnClickListener() {
@@ -64,12 +94,15 @@ public class SignupActivity extends AppCompatActivity {
                     account.setPassWord(textInputEditTextPassword.getText().toString().trim());
                     account.setName(textInputEditTextName.getText().toString());
                     account.setEmail(textInputEditTextEmail.getText().toString().trim());
-                    account.setPhoneNumber(textInputEditTextPhoneNumber.getText().toString().trim());
+                        String temp = textInputEditTextPhoneNumber.getText().toString().trim();
+                        int phone = Integer.parseInt(temp);
+                    account.setPhoneNumber(phone);
                     if(rgGioiTinh.getCheckedRadioButtonId()==R.id.rb_signup_nam){
                         account.setGioiTinh(1);
                     } else {
                         account.setGioiTinh(0);
                     }
+                    account.setCountryCode(areaCode.getCode());
                     databaseHelper.insertdata(account);
                     DatabaseHelper.accountArrayList.add(account);
                     if(databaseHelper.checkAccount(account.getUserName(),account.getPassWord())){

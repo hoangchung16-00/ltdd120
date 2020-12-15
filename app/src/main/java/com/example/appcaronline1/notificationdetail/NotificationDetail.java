@@ -5,12 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appcaronline1.R;
+import com.example.appcaronline1.editaccount.EditAccount;
 import com.example.appcaronline1.home.HomeAcitivity;
+import com.example.appcaronline1.standard.Standard;
 
 public class NotificationDetail extends AppCompatActivity {
 
@@ -23,14 +27,21 @@ public class NotificationDetail extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_notification_detail);
-
-        LinearLayout home = (LinearLayout) findViewById(R.id.li_noti_detail_111);
+        ImageView home = (ImageView) findViewById(R.id.backtoprofile);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NotificationDetail.this, HomeAcitivity.class);
-                intent.putExtra("login","Login");
-                startActivity(intent);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
+            }
+        });
+        LinearLayout orderCar = (LinearLayout) findViewById(R.id.order_grab);
+        orderCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(NotificationDetail.this, Standard.class);
+                startActivity(myIntent);
             }
         });
     }

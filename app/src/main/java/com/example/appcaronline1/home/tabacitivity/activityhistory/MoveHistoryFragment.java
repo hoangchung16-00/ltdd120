@@ -50,17 +50,8 @@ public class MoveHistoryFragment extends Fragment {
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
-            List<Move> moveList = createList();
-            recyclerView.setAdapter(new MyMoveHistoryRecyclerViewAdapter(moveList));
         }
         return view;
     }
-    public List<Move> createList(){
-        List<Move> list = new ArrayList<Move>();
-        Move move1 = new Move("Hải Châu","Sơn Trà","23/2/2020 14:25","23/2/2020 14:40");
-        Move move2 = new Move("Hải Châu","Sơn Trà","23/2/2020 14:25","23/2/2020 14:40");
-        list.add(move1);
-        list.add(move2);
-        return list;
-    }
+
 }

@@ -1,15 +1,16 @@
 package com.example.appcaronline1.database.account;
 
 public class Account {
-    private String userName,passWord,name,phoneNumber,email;
-    private int gioiTinh;
+    private String userName,passWord,name,email,countryCode;
+    private int gioiTinh,phoneNumber;
     public static Account AccountLogin;
 
 
-    public Account(String userName, String passWord, String name, String phoneNumber, String email, int gioiTinh) {
+    public Account(String userName, String passWord, String name, int phoneNumber, String email, int gioiTinh, String coutryCode) {
         this.userName = userName;
         this.passWord = passWord;
         this.name = name;
+        this.countryCode = coutryCode;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.gioiTinh = gioiTinh;
@@ -17,6 +18,15 @@ public class Account {
 
     public Account() {
     }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
+    }
+
     public Account(String passWord){
         this.passWord = passWord;
     }
@@ -37,11 +47,11 @@ public class Account {
         this.gioiTinh = gioiTinh;
     }
 
-    public String getPhoneNumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

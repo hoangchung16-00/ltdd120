@@ -6,16 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.appcaronline1.R;
+import com.example.appcaronline1.database.account.Account;
 import com.example.appcaronline1.editaccount.EditAccount;
 import com.example.appcaronline1.memberrank.MemberRank;
 
 
 public class AccountFragment extends Fragment{
-
+    TextView tvname;
     public AccountFragment() {
     }
 
@@ -33,6 +35,8 @@ public class AccountFragment extends Fragment{
         View root;
         root=  inflater.inflate(R.layout.fragment_account,container,false);
         LinearLayout memberrank = (LinearLayout) root.findViewById(R.id.li_account_121);
+        tvname = (TextView) root.findViewById(R.id.tv_account_username);
+        tvname.setText(Account.AccountLogin.getName());
         memberrank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
