@@ -17,12 +17,14 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.appcaronline1.R;
+import com.example.appcaronline1.home.HomeAcitivity;
 import com.example.appcaronline1.home.tabacitivity.activityhistory.OptionMoving;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -65,6 +67,14 @@ public class BookingStatementActivity extends FragmentActivity implements OnMapR
         statusprice = (TextView) findViewById(R.id.status_price);
         statuskind = (TextView) findViewById(R.id.status_kind);
         ImageView backBooking = (ImageView) findViewById(R.id.back_booking_activity);
+        Button bthome = (Button) findViewById(R.id.bt_home);
+        bthome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookingStatementActivity.this, HomeAcitivity.class);
+                startActivity(intent);
+            }
+        });
         backBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

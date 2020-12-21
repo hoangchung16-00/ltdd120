@@ -9,6 +9,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
@@ -102,6 +103,8 @@ public class BookingDetailActivity extends FragmentActivity implements OnMapRead
                 intent.putStringArrayListExtra("move",move);
 
                 databaseHelper.createBooking(new Movement(placefrom.getText().toString(),placeto.getText().toString(),now,null,optionMoving,cash), Account.AccountLogin.getUserName());
+                DatabaseHelper databaseHelper1 = new DatabaseHelper(Account.AccountLogin.getUserName());
+                databaseHelper1.fetchdata1();
                 startActivity(intent);
 
             }
@@ -113,6 +116,8 @@ public class BookingDetailActivity extends FragmentActivity implements OnMapRead
             public void onClick(View v) {
                 optionMoving = OptionMoving.BIKE;
                 cash = Double.valueOf(19000);
+                bikeoption.setBackgroundColor(Color.LTGRAY);
+                caroption.setBackgroundColor(Color.WHITE);
             }
         });
         caroption.setOnClickListener(new View.OnClickListener() {
@@ -120,6 +125,8 @@ public class BookingDetailActivity extends FragmentActivity implements OnMapRead
             public void onClick(View v) {
                 optionMoving = OptionMoving.CAR;
                 cash = Double.valueOf(33000);
+                caroption.setBackgroundColor(Color.LTGRAY);
+                bikeoption.setBackgroundColor(Color.WHITE);
             }
         });
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

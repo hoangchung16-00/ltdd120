@@ -5,11 +5,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Path;
 import android.os.AsyncTask;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.example.appcaronline1.activityhistory.Move;
 import com.example.appcaronline1.home.tabacitivity.activityhistory.Movement;
+import com.example.appcaronline1.home.tabacitivity.activityhistory.OptionMoving;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -24,16 +27,25 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DatabaseHelper {
+    String username;
+    private static final String apiurl1 = "http://10.0.2.2/webserver_android/json_fetch_booking_history.php";
     private static final String apiurl ="http://10.0.2.2/webserver_android/json_fetch.php";
-
     private static final String url ="http://10.0.2.2/webserver_android/db_insert.php";
     private static final String url2 ="http://10.0.2.2/webserver_android/db_update.php";
     private static final String url3 ="http://10.0.2.2/webserver_android/db_insert_booking.php";
     public static ArrayList<Account> accountArrayList ;
+    public static ArrayList<Move> moveListData;
     public static List<AreaCode> areaCodeArrayList = Arrays.asList(new AreaCode("usaflag","+1",1),
             new AreaCode("vietnamflag","+84",2),
             new AreaCode("japanflag","+81",3));
-
+    public String getApiurl1(String username){
+        return "http://10.0.2.2/webserver_android/json_fetch_booking_history.php?t1="+username;
+    }
+    public DatabaseHelper(String username){
+        this.username=username;
+    }
+    public DatabaseHelper(){
+    }
     public void fetchdata(){
         class dbManager extends AsyncTask<String,Void,String> {
             protected void onPostExecute(String data){
@@ -79,7 +91,57 @@ public class DatabaseHelper {
         dbManager obj = new dbManager();
         obj.execute(apiurl);
     }
+    public void fetchdata1(){
+        class dbManager1 extends AsyncTask<String,Void,String> {
+            protected void onPostExecute(String data){
+                try {
+                    moveListData = new ArrayList<Move>();
+                    JSONArray ja = new JSONArray(data);
+                    JSONObject jo = null;
+                    for (int i=0;i<ja.length();i++){
+                        jo=ja.getJSONObject(i);
+                        String moveFrom = jo.getString("place_from");
+                        String moveTo = jo.getString("place_to");
+                        String timeStart = jo.getString("time_from");
+                        String timeEnd = jo.getString("time_to");
+                        String temp = jo.getString("option");
+                        OptionMoving optionMoving = OptionMoving.valueOf(temp);
+                        Double cash = jo.getDouble("cash");
+                        moveListData.add(new Move(moveFrom,moveTo,timeStart,timeEnd,optionMoving,cash));
+                    }
+
+                } catch (Exception ex){
+
+                }
+            }
+            @Override
+            protected String doInBackground(String... strings) {
+                try {
+                    URL url = new URL(strings[0]);
+                    HttpURLConnection conn =(HttpURLConnection) url.openConnection();
+                    BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                    StringBuffer data = new StringBuffer();
+                    String line;
+                    while ((line=br.readLine())!=null){
+                        data.append(line+"\n");
+                    }
+                    br.close();
+                    return data.toString();
+                } catch (Exception e){
+                    return e.getMessage();
+                }
+
+            }
+        }
+        dbManager1 obj1 = new dbManager1();
+        obj1.execute(getApiurl1(username));
+    }
+    public List<Move> getMoveList(){
+        return moveListData;
+    }
+
     public void insertdata(Account signupAccount){
+
         String qryString = "?t1="+signupAccount.getUserName()+"&t2="+signupAccount.getPassWord()+"&t3="+signupAccount.getName()+"&t4="+signupAccount.getPhoneNumber()+"&t5="+signupAccount.getEmail()+"&t6="+signupAccount.getGioiTinh()+"&t7="+signupAccount.getCountryCode();
         class dbclass extends AsyncTask<String,Void,String>{
             @Override

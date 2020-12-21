@@ -155,7 +155,12 @@
                             android:textSize="24sp" />
 
                     </LinearLayout>
-
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:id="@+id/bt_home"
+                    />
 
                 </LinearLayout>
             </LinearLayout>

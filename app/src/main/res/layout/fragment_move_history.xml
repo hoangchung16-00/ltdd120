@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color"
     android:orientation="vertical"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="2dp"
     android:id="@+id/li_fragment_item_1">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="67dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/li_fragment_item_11">
         <LinearLayout
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:id="@+id/li_fragment_item_111">
@@ -19,10 +22,12 @@
                 android:layout_height="25dp"
                 android:gravity="center"
                 android:text="Từ"
+                android:textColor="@color/black"
                 android:textAlignment="center"/>
             <TextView
+
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:gravity="center"
                 android:text="A"
                 android:textAlignment="center"
@@ -32,7 +37,7 @@
                 android:id="@+id/tv_fragment_move_from"/>
         </LinearLayout>
         <LinearLayout
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:id="@+id/li_fragment_item_112">
@@ -41,10 +46,11 @@
                 android:layout_height="25dp"
                 android:gravity="center"
                 android:text="Đến"
+                android:textColor="@color/black"
                 android:textAlignment="center"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:gravity="center"
                 android:text="A"
                 android:textAlignment="center"
@@ -62,13 +68,14 @@
         android:orientation="horizontal"
         android:id="@+id/li_fragment_item_12">
         <LinearLayout
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:id="@+id/li_fragment_item_121">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:text="Thời gian bắt đầu"
                 android:textAlignment="center"/>
@@ -84,7 +91,7 @@
                 android:id="@+id/tv_fragment_time_start"/>
         </LinearLayout>
         <LinearLayout
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:id="@+id/li_fragment_item_122">
@@ -92,6 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:text="Thời gian đến nơi"
                 android:textAlignment="center"/>
             <TextView
@@ -106,6 +114,61 @@
                 android:id="@+id/tv_fragment_time_end"/>
 
         </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        android:id="@+id/li_fragment_item_13">
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/li_fragment_item_123">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="Loại xe"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="A"
+                android:textAlignment="center"
+                android:textSize="22dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:id="@+id/option_id"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/li_fragment_item_124">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="Tổng tiền"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="A"
+                android:textAlignment="center"
+                android:textSize="22dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:id="@+id/cash_id"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

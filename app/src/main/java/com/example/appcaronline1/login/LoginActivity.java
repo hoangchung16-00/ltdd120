@@ -62,8 +62,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(databaseHelper.checkAccount(etUsername.getText().toString().trim(),etPassword.getText().toString().trim())){
                     databaseHelper.getLoginAccount(etUsername.getText().toString().trim());
+                    DatabaseHelper databaseHelper1 = new DatabaseHelper(etUsername.getText().toString());
+                    databaseHelper1.fetchdata1();
                     Intent intent = new Intent(LoginActivity.this, HomeAcitivity.class);
-                    intent.putExtra("login","Login");
                     startActivity(intent);
                 } else {
                     Toast.makeText(LoginActivity.this,"Sai",Toast.LENGTH_SHORT).show();
